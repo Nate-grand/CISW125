@@ -21,7 +21,7 @@ fruit = "apple"
 meat = "steak"
 book = "paper"
 movie = "screens"
-game = "fun"
+game = "Clue"
 pi = 3.14
 # Then print your variables.
 print(vegtable)
