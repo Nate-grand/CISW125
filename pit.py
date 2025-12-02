@@ -8,3 +8,5 @@ b = int(input("enter side b of the triangle"))
 
 c = (a ** 2 + b ** 2) ** 0.5
 print("the side c is equal to:")
+
+# project #0.2 
