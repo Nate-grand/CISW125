@@ -2,19 +2,17 @@
 # 4/12/25
 # Types project
 
-Anime = input("Whats your favorite anime?: ")
-Anime_character = input("Whats your favorite anime character?: ")
+anime = input("Whats your favorite anime?: ")
+anime_character = input("Whats your favorite anime character?: ")
 
-character_count = len(Anime)
+character_count = len(anime)
 print(f"Your favorite anime is {character_count} characters long.")
 
-character_count = len(Anime_character)
+character_count = len(anime_character)
 print(f"Your favorite anime_character is {character_count} characters long.")
 
-mysubstring1 = Anime[0:100]
-mysubstring1 = mysubstring1[0]
+initial1 = anime[0]
 
-mysubstring2 = Anime_character[0:100]
-mysubstring2 = mysubstring2[0]
+initial2 = anime_character[0]
 
-print(f"The intials of your favorite anime and anime character are {mysubstring1} and {mysubstring2}.")
+print(f"The intials of your favorite anime and anime character are {initial1} and {initial2}.")
