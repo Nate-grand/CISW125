@@ -49,9 +49,6 @@ def fix_your_self():
         case "b":
             print("You try to run away.")
             try_to_run_away()
-        case "c":
-            print("You choose to stay silent.")
-            stay_silent()
         case _:
             print("Error")
 
@@ -84,6 +81,7 @@ def no():
 def leave():
     if "potion" in inventory:
         print("You get curious about the potion and decide to drink it.")
+        drink_potion()
 
     else:
         print("You wander around the forest and get lost.")
@@ -95,8 +93,7 @@ def drink_potion():
           After you enter come accross a glowing sword stuck in an alter and have to choose what to do from here.
           What do you do know?
           a: Leave the sword.
-          b: Wait and see what it does.
-          c: try and take the sword.""")
+          b: try and take the sword.""")
     
     choice = input("Whats do you do now: ")
 
@@ -105,9 +102,6 @@ def drink_potion():
             print("You choose to leave the sword glowing things arent good news.")
             leave_the_sword()
         case "b":
-            print("You choose to wait and see what it does no harm in being casious.")
-            wait_and_see()
-        case "c":
             print("You choose to try and take the sword it looks cool.")
             take_the_sword()
         case _:
@@ -115,20 +109,145 @@ def drink_potion():
 
 def leave_the_sword():
     print("""You leave the cave without the sword and continue through the forest.""")
-
-def wait_and_see():
-    print("""You sit down and start watching the sword waiting to see what it will do.""")
+    pulll_the_sword()
 
 def take_the_sword():
-    print("""You put both hands on the hilt of the sword and with a bright shine a sliding sound the sword comes free and you feel a powerfull feeling inside you.
-          """)
+    print("""You put both hands on the hilt of the sword and with a bright shine a sliding sound the sword comes free and you feel a powerfull feeling inside you.""")
     inventory.append("Glowing sword")
+    pulll_the_sword()
+
+def pulll_the_sword():
+    if "Glowing sword" in inventory:
+        print("""You suddenly feel dragon wings sprout from your back and realize the sword did this.
+              You exit the cave and fly into the sky determmined to get back to your home town now.""")
+
+    else:
+        print("You leave the cave and wander through the woods till you are completly lost.")
 
 def try_to_run_away():
-    print("dgbyuwegdjwniadiw")
+    print("""You quickly stagger up and start hobbling away as fast as you can worried he might be dangerous.
+          Before you get too far away the old man tosses a rolled up map at you and then walks away.
+          what do you do now?
+          a: Dont pick it up.
+          b: Pick it up.""")
+    
+    choice = input("Whats do you do now: ")
 
-def stay_silent():
-    print("budiweghioweeyfgnwd")
+    match choice.lower():
+        case "a":
+            print("You choose to leave it.")
+            keep_running()
+        case "b":
+            print("You choose to pick it up.")
+            inventory.append("Map")
+            keep_running()
+        case _:
+            print("Error")
+    
+    def keep_running():
+        print("""You keep running till you stumble accross a cave and upon entering you find a normal sword in an alter.
+          You think about pulling it.
+          What do you do now?
+          a: Dont pull the sword.
+          b: Pull the sword.""")
+        
+    choice = input("Whats do you do now: ")
+    
+    match choice.lower():
+        case "a":
+            print("You choose not take the sword.")
+            second_leave_sword()
+        case "b":
+            print("You choose to try and take the sword.")
+            second_take_sword()
+        case _:
+            print("Error")
+
+def second_leave_sword():
+    print("""You leave the cave without the sword and continue through the forest.""")
+
+def second_take_sword():
+    print("""You put both hands on the hilt of the sword and slowly pull the sword free and something starts to happen.""")
+    pulll_the_sword()
+
+def pulll_the_sword():
+    if "Map" in inventory:
+        print("""The sword all of a sudden stops being pulled and you get a strong feeling that you should look at the map that the old man gave you.
+              You open it and see it as a map to his house and decide to go to it to get answers.""")
+
+    else:
+        print("You try to pull the sword but when tyr to pull it all the way out a strong shock comes out of it and knocks you out cold.")
+
+def Follow_map():
+    print("""You slowly follow the map and make your way to the old mans house asking what the sword was.
+          The old man tells you to take a potion if and go back if you want to know what it is.
+         Do you take it or not?""")
+    
+    choice = input("Do you take it or not?: ")
+
+    match choice.lower():
+        case "a":
+            print("You take the potion.")
+            yes2()
+        case "b":
+            print("You dont take the potion.")
+            no2()
+        case _:
+            print("Error")
+
+def yes2():
+    print("You leave the house with the potion.")
+    inventory.append("potion")
+    leave2()
+
+def no2():
+    print("You leave the house without the potion.")
+    leave2()
+
+def leave2():
+    if "potion" in inventory:
+        print("Once your a ways from the house you decide to drink the potion.")
+        drink_potion2()
+
+    else:
+        print("You try to find the cave again but end up getting lost inn the forest.")
+
+def drink_potion2():
+    print("""You drink the potion and somethhing satarts happening to your eyes.
+          A light trail of light appears going off in the directsion you think the cave is.
+          You make it to the cave and you see the sword is now glowing.
+          What do you do know?
+          a: Leave the sword.
+          b: try and take the sword.""")
+    
+    choice = input("Whats do you do now: ")
+
+    match choice.lower():
+        case "a":
+            print("You choose to leave the sword glowing things arent good news.")
+            leave_the_sword2()
+        case "b":
+            print("You choose to try and take the sword it looks cool.")
+            take_the_sword2()
+        case _:
+            print("Error")
+
+def leave_the_sword2():
+    print("""You leave the cave without the sword and continue through the forest.""")
+    pulll_the_sword()
+
+def take_the_sword2():
+    print("""You put both hands on the hilt of the sword and with a bright shine a sliding sound the sword comes free and you feel a powerfull feeling inside you.""")
+    inventory.append("Glowing sword")
+    pulll_the_sword2()
+
+def pulll_the_sword2():
+    if "Glowing sword" in inventory:
+        print("""You suddenly feel dragon wings sprout from your back and realize the sword did this.
+              You exit the cave and fly into the sky determmined to get back to your home town now.""")
+
+    else:
+        print("You leave the cave and wander through the woods till you are completly lost.")
 
 def call_for_help():
     print("""You start shouting and waiving for help hoping that anyone who sees you wont kill you.
