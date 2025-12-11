@@ -14,7 +14,7 @@ def begin():
            C: You decide its too risky to do anything at all and choose to stay there and be quiet.
           """)
 
-    choice = input("Whats do you do now: ")
+    choice = input("What do you do now: ")
 
     match choice.lower():
         case "a":
@@ -37,10 +37,9 @@ def fix_your_self():
           You sit up from where you are and see an old looking man standing near and looking at you.
           What do you do now?
           a: Ask the old man for help.
-          b: Try to run away.
-          c: stay silent and wait for him to make the first move.""")
+          b: Try to run away.""")
     
-    choice = input("Whats do you do now: ")
+    choice = input("What do you do now: ")
 
     match choice.lower():
         case "a":
@@ -95,7 +94,7 @@ def drink_potion():
           a: Leave the sword.
           b: try and take the sword.""")
     
-    choice = input("Whats do you do now: ")
+    choice = input("What do you do now: ")
 
     match choice.lower():
         case "a":
@@ -131,7 +130,7 @@ def try_to_run_away():
           a: Dont pick it up.
           b: Pick it up.""")
     
-    choice = input("Whats do you do now: ")
+    choice = input("What do you do now: ")
 
     match choice.lower():
         case "a":
@@ -144,14 +143,14 @@ def try_to_run_away():
         case _:
             print("Error")
     
-    def keep_running():
-        print("""You keep running till you stumble accross a cave and upon entering you find a normal sword in an alter.
+def keep_running():
+    print("""You keep running till you stumble accross a cave and upon entering you find a normal sword in an alter.
           You think about pulling it.
           What do you do now?
           a: Dont pull the sword.
           b: Pull the sword.""")
         
-    choice = input("Whats do you do now: ")
+    choice = input("What do you do now: ")
     
     match choice.lower():
         case "a":
@@ -174,11 +173,12 @@ def pulll_the_sword():
     if "Map" in inventory:
         print("""The sword all of a sudden stops being pulled and you get a strong feeling that you should look at the map that the old man gave you.
               You open it and see it as a map to his house and decide to go to it to get answers.""")
+        follow_map()
 
     else:
         print("You try to pull the sword but when tyr to pull it all the way out a strong shock comes out of it and knocks you out cold.")
 
-def Follow_map():
+def follow_map():
     print("""You slowly follow the map and make your way to the old mans house asking what the sword was.
           The old man tells you to take a potion if and go back if you want to know what it is.
          Do you take it or not?""")
@@ -220,7 +220,7 @@ def drink_potion2():
           a: Leave the sword.
           b: try and take the sword.""")
     
-    choice = input("Whats do you do now: ")
+    choice = input("What do you do now: ")
 
     match choice.lower():
         case "a":
@@ -259,7 +259,7 @@ def call_for_help():
           b: Try sneaking away.
           C: Attempt a mass break out with your fellow war prisoners.""")
     
-    choice = input("Whats do you do now: ")
+    choice = input("What do you do now: ")
 
     match choice.lower():
         case "a":
@@ -275,13 +275,39 @@ def call_for_help():
             print("Error")
 
 def stay_wher_you_are():
-    print("gobblesmock")
+    print("You stay in the camp till they begin moving and weeks later upon reaching a city you are put in jail indefinitly until further notice.")
 
 def try_sneaking_away():
-    print("caravanderfan")
+    print("You are trying to sneak put when a gaurd spots you and captures you again and for trying to escape your givin the chopping block.")
 
 def attempt_a_mass_breakut():
-    print("ulusiusesesss")
+    print("""You succesfully convince most of the prisoners to stage a mass breakout and find a way to loosen there binds.
+          They launch there suprise attck on the gaurds at night and succesfully get past most of them and while running you see a short sword on the ground.
+          Do you pick it up or leave it.
+          a: pick it up.
+          b: leave it.""")
+    
+    choice = input("What do you do now: ")
+
+    match choice.lower():
+        case "a":
+            print("You decide to pick up the short sword.")
+            inventory.append("short sword")
+            short_sword()
+        case "b":
+            print("You decide to leave the sword and get out of there.")
+            short_sword()
+        case _:
+            print("Error")
+
+def short_sword():
+    if "short sword" in inventory:
+        print("""You pick up the sword and make your way away from the camp where you encounter an enemy scout.
+              You engage him in combat and though you have limited fighting experience it seems this guy is in the same boat.
+              The fight ends with you slaying the scout and making a break for freedom.""")
+    else:
+        print("""You continue running without the sword and when your about to escape your cornered by a scout.
+              Without anything thing to defend yourself with your slayed on the spot.""")
 
 def remain_where_you_are():
     print("""You decide to remain and not do anything devoid of any will to keep going you lie there in agony for hours even days.
@@ -295,7 +321,7 @@ def remain_where_you_are():
           b: You still leave but you also make sure to sabatage the slavers provisions and supplies.
           c: You decide to stab all the slavers to make sure you arent followed and then leave.""")
     
-    choice = input("Whats do you do now: ")
+    choice = input("What do you do now: ")
     
     match choice.lower():
          case "a":
@@ -311,13 +337,44 @@ def remain_where_you_are():
             print("Error")
 
 def leave_quickly():
-    print("fatsfastfsats")
+    print("""You leave quickly with as much as you can carry without waking anyone and set out.
+          You make it a ways and stumble upon a village where you start a making a living through odd jobs and such.
+          You also meet a girl and get married and live the rest of your days happily ever after.""")
 
 def sabatoge_the_slavers():
-    print("sabatagaga")
+    print("""You sneakily pile all there provisions in a pile and start burning all of it but unfortuantly right as your about to leave a slaver wakes up and tackeles him."
+          The fires put out and your bound with much tighter bonds and are soon taken to a draebanorean city where you are sold.""")
 
 def kill_the_slavers():
-    print("murdkiljeijs")
+    print("""You decide to go one by one stabing the slavers."
+          You slowly stubble out into the wildernest guilty about what you had done.
+          You happen upon a colorfull cloak the road and wonder if you should take it.
+          What should you do?
+          a: pick it up and wear it.
+          b: dont pick it up.""")
+    
+    choice = input("What do you do now: ")
+    
+    match choice.lower():
+         case "a":
+            print("You choose to take the colorfull cloak.")
+            inventory.append("colorfull cloak")
+            cloak()
+         case "b":
+            print("You choose to leave it.")
+            cloak()
+         case _:
+            print("Error")
+
+def cloak():
+    if "colorfull cloak" in inventory:
+        print("""A loud caravan comes by and after seeing his colorfull cloak mistake him for a performer and invite him to join them.
+              You decide to take them up on there offer and discover you have a hiddeen talent for this performing thing.
+              You end up staying with this group for multiple years and become quite the famous performer in the process.""")
+    else:
+        print("""A loud caravan comes by and passes him no more than a head nod.
+              He continues traveling till he reaches a large city where he spends the majority of his life as a begger on the streets.""")
+
 
 
 
