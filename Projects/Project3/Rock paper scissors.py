@@ -19,7 +19,7 @@ while ask_user == "yes":
     else:
         print("Computer wins!")
         ask_user = input("Do you want to play again? (yes/no): ").lower()
-        if ask_user == "Yes":
+        if ask_user == "yes":
             continue
         elif ask_user == "no":
             break
