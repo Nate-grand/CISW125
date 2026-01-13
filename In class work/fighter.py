@@ -2,15 +2,15 @@
 
 
 
-
-
-
-
-
+import pygame as py
+from Ball2 import Ball
+import time
+import random
+from Bullet import Bullet
 
 py.init()
 
-size = WIDTH, Height = 980, 720
+size = WIDTH, HEIGHT = 980, 720
 screen = py.display.set_mode((size))
 
 py.display.set_caption("fire")
@@ -20,14 +20,15 @@ BLACK = (0, 0, 0)
 GREEN = (0, 255, 0)
 BLUE = (0, 0, 255)
 GRENY = (34, 84, 54)
+RED = (255,0, 0)
 
 FPS = 60
 clock = py.time.Clock()
 
 
 mainballcontrols = {
-    'left':py.K_left,
-    'right':py.K_right,
+    'left':py.K_LEFT,
+    'right':py.K_RIGHT,
 }
 
 mainball = Ball(WIDTH/2, HEIGHT-50,25,GRENY,5,'left',5,mainballcontrols)
@@ -57,14 +58,14 @@ while running:
     keys = py.key.get_pressed()
 
     if not game_over:
-        if keys[py.K_space]:
+        if keys[py.K_SPACE]:
             current_time = time.time()
             if current_time - last_bullet_time > bullet_cooldown:
                 bullets.append(Bullet(WHITE, 'up', mainball.x, mainball.y,mainball.radius, mainball.speed))
                 last_bullet_time = current_time
 
             for bullet in bullets[:]:
-                if bullet.x < 0 or bullet.x > WIDTH or bullet.y < 0 or bullet.y > Height:
+                if bullet.x < 0 or bullet.x > WIDTH or bullet.y < 0 or bullet.y > HEIGHT:
                     bullet.remove(bullet)
 
 
@@ -73,4 +74,4 @@ while running:
             bullet.drawBullet(screen)
 
 
-        
+       
