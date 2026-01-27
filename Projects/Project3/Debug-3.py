@@ -8,7 +8,7 @@
 while True:
     # This loop should output numbers from 1 through 10.
     print("Counting up: ", end=" ")
-    for count in range(1, 10):
+    for count in range(1, 11):
         print(count, end=" ")
     print("") # this is just an easy way to make a new-line and makes it much more readable
     choice = input("Should I print them again? (y/n)")
