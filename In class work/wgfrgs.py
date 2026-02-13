@@ -1,7 +1,3 @@
-# nathan macbeth
-# 13/2/26
-# List of the most goated shows does the same thing as a to do list by the way.
-
 import os
 
 file_path = "output.txt"
