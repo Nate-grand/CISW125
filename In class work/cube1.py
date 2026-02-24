@@ -11,9 +11,12 @@ class Cube:
        self.stunned_until = 0
        self.hitValue = hitValue
 
-        if self.controls.get('space') and keys[self.controls['space']]:
+       while self.controls.get('space') and controls[self.controls['space']]:
+
+        if self.controls.get('space') and controls[self.controls['space']]:
             self.y -= self.speed
             self.direction = 'space'
 
-     def move(Self):
-            if self.direction == 'right':
+            def move(self):
+                if self.direction == 'right':
+                    self.x += self.speed

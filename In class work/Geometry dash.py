@@ -1,4 +1,5 @@
 import pygame as py
+from cube1 import cube
 
 py.init()
 
@@ -17,11 +18,12 @@ RED = (255,0, 0)
 FPS = 60
 clock = py.time.Clock()
 
-cube_controls = {
+cube_settings = {
     'jump':py.K_SPACE,
 }
 
-cube = cube_controls(WIDTH/2, HEIGHT-50,25,RED,5,'left',5,cube_controls)
+cube_settings = {"key": "value"}
+cube_settings = cube_settings(WIDTH/2, HEIGHT-50,25,RED,5,'left',5,cube_settings)
 
 while running:
     for event in py.event.get():
